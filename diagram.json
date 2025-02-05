@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Soumya Aggarwal",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 131.4, "left": -54.8, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -86.4, "left": -167.96, "attrs": {} },
+    { "type": "wokwi-rgb-led", "id": "rgb1", "top": 205.6, "left": 58.7, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 359.15,
+      "left": 28.8,
+      "attrs": { "value": "200" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:5V", "bb1:bp.1", "gold", [ "h-38.25", "v192", "h9.6" ] ],
+    [ "esp:18", "bb1:14b.g", "blue", [ "h163.2", "v240" ] ],
+    [ "esp:5", "rgb1:G", "green", [ "h0" ] ],
+    [ "esp:16", "bb1:11b.g", "red", [ "h0" ] ],
+    [ "r1:1", "bb1:12b.h", "green", [ "v0" ] ],
+    [ "r1:2", "bb1:bp.10", "green", [ "v0" ] ],
+    [ "rgb1:R", "bb1:11b.f", "", [ "$bb" ] ],
+    [ "rgb1:COM", "bb1:12b.g", "", [ "$bb" ] ],
+    [ "rgb1:G", "bb1:13b.f", "", [ "$bb" ] ],
+    [ "rgb1:B", "bb1:14b.f", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
